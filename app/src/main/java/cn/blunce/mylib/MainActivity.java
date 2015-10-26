@@ -1,8 +1,10 @@
 package cn.blunce.mylib;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
+import cn.blunce.qq_interface.QQ_interface;
 import cn.blunce.view_utils.ChartView;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,7 +15,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        showLine();
+        startQQInterface();
+//        showLine();
+    }
+
+    private void startQQInterface() {
+        Intent intent = new Intent(this,QQ_interface.class);
+        startActivity(intent);
+        finish();
     }
 
     private void showLine() {
